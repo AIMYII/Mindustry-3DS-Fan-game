@@ -1,6 +1,6 @@
 # Mindustry3DS
 
-Credit to Anuken / Mindustry for original assets and concept
+Credit to Anuken / Mindustry for original assets and concept.
 
 ## How to Build
 
