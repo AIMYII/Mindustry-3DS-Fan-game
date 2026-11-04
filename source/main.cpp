@@ -2,12 +2,14 @@
 #include <citro2d.h>
 #include <stdio.h>
 
-#include <map.cpp>
-#include <ui.cpp>
+#include "map.h"
+#include "ui.h"
 
 int main(int argc, char* argv[]) {
-    initMap();
+    initMap(); // The compiler knows this exists because of map.h
+
     UI();
+
 
 
     // Deinitialize graphics in reverse order

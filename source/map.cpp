@@ -9,12 +9,6 @@
 #define GRID_ROWS 15
 #define TILE_SIZE 16
 
-
-// 0 = Empty/Dirt, 1 = Copper Ore, 2 = Conveyor, 3 = Core
-int mapGrid[GRID_COLS][GRID_ROWS];
-int selectedTileX = -1;
-int selectedTileY = -1;
-
 void initMap() {
     for (int x = 0; x < GRID_COLS; x++) {
         for(int y = 0; y < GRID_ROWS; y++) {
@@ -28,8 +22,10 @@ void initMap() {
     }
     // Place starting Core
     mapGrid[4][6] = 3;
+}
 
-
+void drawMap()
+{
     // Draw Map Tiles
     for (int x = 0; x < GRID_COLS; x++) {
         for (int y = 0; y < GRID_ROWS; y++) {

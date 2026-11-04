@@ -4,20 +4,8 @@
 #include <citro2d.h>
 #include <stdio.h>
 
-#define GRID_COLS 20
-#define GRID_ROWS 15
-#define TILE_SIZE 16
-
-
-// 0 = Empty/Dirt, 1 = Copper Ore, 2 = Conveyor, 3 = Core
-int mapGrid[GRID_COLS][GRID_ROWS];
-int selectedTileX = -1;
-int selectedTileY = -1;
-
-#define SCREEN_TOP_WIDTH 400
-#define SCREEN_TOP_HEIGHT 240
-#define SCREEN_BOT_WIDTH 320
-#define SCREEN_BOT_HEIGHT 240
+#include  "ui.h"
+#include  "map.h" // Including this gives UI access to mapGrid and selectedTileX/Y
 
 void UI()
 {
@@ -105,6 +93,7 @@ void UI()
         // --- DRAW BOTTOM SCREEN (Interactive Gameplay Grid) ---
         C2D_TargetClear(botTarget, C2D_Color32(20, 20, 20, 255));
         C2D_SceneBegin(botTarget);
+        drawMap();
 
         // Panel background (dark grey with slight transparency)
         u32 panelBgColor = C2D_Color32(30, 30, 35, 235);
