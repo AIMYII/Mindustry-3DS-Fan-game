@@ -1,5 +1,7 @@
 # Mindustry3DS
 
+Credit to Anuken / Mindustry for original assets and concept.
+
 ## How to Build
 
 Requires Docker with the `devkitpro/devkitarm` image.
