@@ -1,4 +1,6 @@
 #ifndef MINDUSTRY3DS_UI_H
 #define MINDUSTRY3DS_UI_H
 
+void UI();
+
 #endif //MINDUSTRY3DS_UI_H

@@ -4,15 +4,14 @@
 
 #include "map.h"
 #include "ui.h"
+#include  "block.h"
 
 int main(int argc, char* argv[]) {
-    initMap(); // The compiler knows this exists because of map.h
+    initMap(); // The compiler knows this exists because of map.h Initialize map data
 
-    UI();
+    UI();// Start UI loop and rendering
 
-
-
-    // Deinitialize graphics in reverse order
+    // Deinitiaize graphics in reverse order
     C2D_Fini();
     C3D_Fini();
     gfxExit();

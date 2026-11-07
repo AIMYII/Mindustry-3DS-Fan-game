@@ -1,10 +1,12 @@
 #include "map.h"
-
-
 #include <3ds.h>
 #include <citro2d.h>
 #include <stdio.h>
 
+// Define global variables declared in map.h
+int mapGrid[GRID_COLS][GRID_ROWS];
+int selectedTileX = -1;
+int selectedTileY = -1;
 #define GRID_COLS 20
 #define GRID_ROWS 15
 #define TILE_SIZE 16
@@ -37,6 +39,8 @@ void drawMap()
             if (mapGrid[x][y] == 1)      color = C2D_Color32(217, 145, 87, 255); // Copper Ore (Bronze)
             else if (mapGrid[x][y] == 2) color = C2D_Color32(90, 190, 90, 255);  // Conveyor (Green)
             else if (mapGrid[x][y] == 3) color = C2D_Color32(80, 130, 220, 255); // Core (Blue)
+            else if (mapGrid[x][y] == 4) color = C2D_Color32(200, 100, 50, 255); // Drill
+            else if (mapGrid[x][y] == 5) color = C2D_Color32(150, 150, 150, 255); // Wall
 
             // Fill Tile
             C2D_DrawRectSolid(px, py, 0, TILE_SIZE - 1, TILE_SIZE - 1, color);
@@ -50,12 +54,3 @@ void drawMap()
         C2D_DrawRectSolid(hx, hy, 0, TILE_SIZE - 1, TILE_SIZE - 1, C2D_Color32(255, 255, 255, 120));
     }
 }
-
-enum Category { CAT_DISTRIBUTION, CAT_DEFENSE, CAT_POWER, CAT_PRODUCTION };
-Category activeCategory = CAT_DISTRIBUTION;
-
-// Draw vertical category tabs at X = 285
-// Slot 0 (Distribution): Y = 90
-// Slot 1 (Defense):      Y = 115
-// Slot 2 (Power):        Y = 140
-// Slot 3 (Production):   Y = 165

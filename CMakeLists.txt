@@ -19,6 +19,10 @@ add_executable(Mindustry3DS source/main.cpp
         source/ui.h
         source/map.cpp
         source/map.h
+        source/block.cpp
+        source/block.h
+        source/tile.cpp
+        source/tile.h
 )
 
 # Link the mandatory 3DS libraries
